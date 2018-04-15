@@ -1,14 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
-
 .rtlSurvey {
   direction: rtl;
   text-align: right;
+
+  font-family: 'DroidArabicKufiRegular', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif !important;
+
+
+  .propertyeditor-triggers{
+    .input-group.form-group{
+      display: flex;
+
+      div:nth-child(1){
+        order:3;
+      }
+      div:nth-child(2){
+        order:2;
+      }
+
+      >span{
+        order:1;
+      }
+    }
+  }
+
+  .input-group {
+    display: flex;
+
+    .input-group-addon {
+      order: 1;
+      width: auto !important;
+    }
+    .form-control {
+      order: 2;
+    }
+  }
+
   .nav-tabs li {
     /*float: right !important;*/
     float: right !important;
   }
 
   .svd_container {
+
+    .svd-pages {
+      border: 1px solid #1ab393;
+      border-bottom: 0;
+      border-radius: 3px 3px 0 0;
+    }
+    font-family: inherit !important;
+
     [class^="icon-"]:before, [class*=" icon-"]:before {
       background-repeat: repeat-x !important;
       background-position: 6px !important;
@@ -17,8 +57,8 @@
     .icon-action-notRequired:before,
     .icon-action-copy:before,
     .icon-action-showTitle:before,
-    .icon-action-addToToolbox:before ,
-    .icon-edit:before{
+    .icon-action-addToToolbox:before,
+    .icon-edit:before {
       background-repeat: repeat-x !important;
       background-position: 0px !important;
     }
@@ -47,16 +87,16 @@
     }
   }
 
-  .svd_toolbox{
-    [class^="icon-"]:before{
+  .svd_toolbox {
+    [class^="icon-"]:before {
       background-position: 8px !important;
     }
   }
-  .btn-group-vertical>.btn, .btn-group>.btn{
+  .btn-group-vertical > .btn, .btn-group > .btn {
     float: right !important;
   }
-  table{
-    th,td{
+  fieldset table {
+    th, td {
       text-align: center !important;
     }
 
@@ -90,7 +130,7 @@
     margin-left: 0 !important;
   }
   .icon-text {
-    margin-left: 1em !important;
+    //margin-left: 1em !important;
   }
   [class^="col-"] {
     float: right !important;

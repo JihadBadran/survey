@@ -1,10 +1,10 @@
-import {Component, Input, Output, EventEmitter, ViewEncapsulation} from "@angular/core";
-import * as SurveyKo from "survey-knockout";
-import * as SurveyEditor from "surveyjs-editor";
-import * as widgets from "surveyjs-widgets";
+import {Component, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
+import * as SurveyKo from 'survey-knockout';
+import * as SurveyEditor from 'surveyjs-editor';
+import * as widgets from 'surveyjs-widgets';
 
-import "inputmask/dist/inputmask/phone-codes/phone.js";
-import {ArLocale} from "./ArLocale";
+import 'inputmask/dist/inputmask/phone-codes/phone.js';
+import {ArLocale} from './ArLocale';
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -20,19 +20,19 @@ widgets.ckeditor(SurveyKo);
 widgets.autocomplete(SurveyKo);
 widgets.bootstrapslider(SurveyKo);
 
-var CkEditor_ModalEditor = {
+const CkEditor_ModalEditor = {
   afterRender: function (modalEditor, htmlElement) {
-    var editor = window["CKEDITOR"].replace(htmlElement);
-    editor.on("change", function () {
+    const editor = window['CKEDITOR'].replace(htmlElement);
+    editor.on('change', function () {
       modalEditor.editingValue = editor.getData();
     });
     editor.setData(modalEditor.editingValue);
   },
   destroy: function (modalEditor, htmlElement) {
-    var instance = window["CKEDITOR"].instances[htmlElement.id];
+    const instance = window['CKEDITOR'].instances[htmlElement.id];
     if (instance) {
       instance.removeAllListeners();
-      window["CKEDITOR"].remove(instance);
+      window['CKEDITOR'].remove(instance);
     }
   }
 };
@@ -43,7 +43,7 @@ SurveyEditor.SurveyPropertyModalEditor.registerCustomWidget(
 
 
 @Component({
-  selector: "survey-editor",
+  selector: 'survey-editor',
   template: `<div id="surveyEditorContainer" [class]="rtl ? 'rtlSurvey' : ''"></div>`,
   styleUrls: ['./survey.editor.component.scss'],
   encapsulation: ViewEncapsulation.None
@@ -56,19 +56,17 @@ export class SurveyEditorComponent {
   @Output() surveySaved: EventEmitter<Object> = new EventEmitter();
 
   ngOnInit() {
-    SurveyKo.JsonObject.metaData.addProperty(
-      "questionbase",
-      "popupdescription:text"
-    );
-    SurveyKo.JsonObject.metaData.addProperty("page", "popupdescription:text");
+    // SurveyKo.JsonObject.metaData.addProperty(
+    //   'questionbase',
+    //   'popupdescription:text'
+    // );
+    // SurveyKo.JsonObject.metaData.addProperty('page', 'popupdescription:text');
 
-    SurveyEditor
-      .editorLocalization
-      .locales["ar"] = ArLocale;
-    SurveyEditor.editorLocalization.currentLocale = "ar";
-    let editorOptions = {showEmbededSurveyTab: false, generateValidJSON: true};
+    SurveyEditor.editorLocalization.locales['ar'] = ArLocale;
+    SurveyEditor.editorLocalization.currentLocale = 'ar';
+    const editorOptions = {showEmbededSurveyTab: false, generateValidJSON: true};
     this.editor = new SurveyEditor.SurveyEditor(
-      "surveyEditorContainer",
+      'surveyEditorContainer',
       editorOptions
     );
 
