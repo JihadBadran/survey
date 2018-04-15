@@ -4,6 +4,7 @@ import * as SurveyEditor from "surveyjs-editor";
 import * as widgets from "surveyjs-widgets";
 
 import "inputmask/dist/inputmask/phone-codes/phone.js";
+import {ArLocale} from "./ArLocale";
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -61,11 +62,16 @@ export class SurveyEditorComponent {
     );
     SurveyKo.JsonObject.metaData.addProperty("page", "popupdescription:text");
 
+    SurveyEditor
+      .editorLocalization
+      .locales["ar"] = ArLocale;
+    SurveyEditor.editorLocalization.currentLocale = "ar";
     let editorOptions = {showEmbededSurveyTab: false, generateValidJSON: true};
     this.editor = new SurveyEditor.SurveyEditor(
       "surveyEditorContainer",
       editorOptions
     );
+
     this.editor.text = JSON.stringify(this.json);
     this.editor.saveSurveyFunc = this.saveMySurvey;
   }

@@ -48,6 +48,7 @@ export class SurveyComponent {
       header.appendChild(span);
       header.appendChild(btn);
     });
+    surveyModel.locale = "ar";
     Survey.SurveyNG.render("surveyElement", { model: surveyModel });
   }
 
