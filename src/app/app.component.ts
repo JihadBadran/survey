@@ -192,5 +192,6 @@ export class AppComponent {
 
   onSurveySaved(survey) {
     this.json = survey;
+    console.log("Saved");
   }
 }

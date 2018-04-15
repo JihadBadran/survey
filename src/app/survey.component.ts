@@ -33,7 +33,7 @@ export class SurveyComponent {
     surveyModel.onAfterRenderQuestion.add((survey, options) => {
       if (!options.question.popupdescription) return;
 
-      //Add a button;
+      // Add a button;
       var btn = document.createElement("button");
       btn.className = "btn btn-info btn-xs";
       btn.innerHTML = "More Info";

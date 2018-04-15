@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+.rtlSurvey {
+  direction: rtl;
+  text-align: right;
+  .nav-tabs li {
+    /*float: right !important;*/
+    float: right !important;
+  }
+
+  .svd_container {
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      background-repeat: repeat-x !important;
+      background-position: 6px !important;
+    }
+    .icon-action-delete:before,
+    .icon-action-notRequired:before,
+    .icon-action-copy:before,
+    .icon-action-showTitle:before,
+    .icon-action-addToToolbox:before ,
+    .icon-edit:before{
+      background-repeat: repeat-x !important;
+      background-position: 0px !important;
+    }
+    pages-editor {
+      display: flex;
+      div {
+        &:nth-child(1) {
+          order: 1;
+        }
+        &:nth-child(4) {
+          order: 2;
+          padding-top: 15px;
+        }
+        &:nth-child(3) {
+          order: 3;
+        }
+        &:nth-child(2) {
+          order: 4;
+          padding-top: 15px;
+        }
+        &:nth-child(5) {
+          order: 5;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+
+  .svd_toolbox{
+    [class^="icon-"]:before{
+      background-position: 8px !important;
+    }
+  }
+  .btn-group-vertical>.btn, .btn-group>.btn{
+    float: right !important;
+  }
+  table{
+    th,td{
+      text-align: center !important;
+    }
+
+  }
+  .svd_custom_select:before {
+    left: 0;
+    right: auto !important;
+  }
+  .select2-selection__rendered {
+    padding-right: 8px !important;
+    padding-left: 20px !important;
+  }
+  .select2-selection__arrow {
+    left: 0 !important;
+    right: auto !important;
+  }
+  .svd_custom_select select {
+    padding-left: 3em !important;
+    padding-right: 6px;
+  }
+  .sjs-cb-label {
+    margin-right: 35px !important;
+    margin-left: 0 !important;
+  }
+  .checkmark {
+    right: 0;
+    left: auto !important;
+  }
+  .svd_container, .svd_toolbox, .svd_toolbox_item, .svd_toolbox_item_text {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .icon-text {
+    margin-left: 1em !important;
+  }
+  [class^="col-"] {
+    float: right !important;
+  }
+
+}
